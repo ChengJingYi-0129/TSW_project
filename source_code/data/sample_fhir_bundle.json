@@ -1,0 +1,146 @@
+{
+  "resourceType": "Bundle",
+  "id": "personal-health-demo-bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "p001",
+        "name": [
+          {
+            "family": "Tan",
+            "given": ["Alicia"]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1999-04-16"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "c001",
+        "subject": {
+          "reference": "Patient/p001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73211009",
+              "display": "Diabetes mellitus"
+            }
+          ],
+          "text": "Type 2 diabetes mellitus"
+        },
+        "clinicalStatus": {
+          "text": "active"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "c002",
+        "subject": {
+          "reference": "Patient/p001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder"
+            }
+          ],
+          "text": "Hypertension"
+        },
+        "clinicalStatus": {
+          "text": "active"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "m001",
+        "subject": {
+          "reference": "Patient/p001"
+        },
+        "medicationCodeableConcept": {
+          "text": "Metformin 500mg"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "o001",
+        "subject": {
+          "reference": "Patient/p001"
+        },
+        "code": {
+          "text": "Fasting blood glucose"
+        },
+        "valueQuantity": {
+          "value": 8.1,
+          "unit": "mmol/L"
+        },
+        "effectiveDateTime": "2026-06-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "o002",
+        "subject": {
+          "reference": "Patient/p001"
+        },
+        "code": {
+          "text": "Systolic blood pressure"
+        },
+        "valueQuantity": {
+          "value": 146,
+          "unit": "mmHg"
+        },
+        "effectiveDateTime": "2026-06-11"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "o003",
+        "subject": {
+          "reference": "Patient/p001"
+        },
+        "code": {
+          "text": "Daily steps"
+        },
+        "valueQuantity": {
+          "value": 3200,
+          "unit": "steps"
+        },
+        "effectiveDateTime": "2026-06-12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "cp001",
+        "subject": {
+          "reference": "Patient/p001"
+        },
+        "title": "Diabetes lifestyle monitoring plan",
+        "activity": [
+          {
+            "detail": {
+              "description": "Monitor fasting glucose and increase physical activity."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

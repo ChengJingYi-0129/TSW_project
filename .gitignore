@@ -1,0 +1,20 @@
+# Python build and cache files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generated demonstration outputs
+output/
+
+# Coursework deliverables kept outside the code repository
+report/
+slides/
+generate_deliverables.py
+*.pdf
+
+# Local editor and environment files
+.venv/
+venv/
+.vscode/
+.idea/
+.DS_Store
