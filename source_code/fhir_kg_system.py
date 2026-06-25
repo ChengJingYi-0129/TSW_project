@@ -69,6 +69,7 @@ def create_ontology(graph):
     graph.add((EX.ChronicCondition, RDFS.subClassOf, EX.Condition))
     graph.add((EX.RiskPatient, RDFS.subClassOf, EX.Patient))
 
+    # SPARQL query reference
     object_properties = {
         EX.hasCondition: (EX.Patient, EX.Condition, "has condition"),
         EX.hasObservation: (EX.Patient, EX.Observation, "has observation"),
@@ -85,6 +86,7 @@ def create_ontology(graph):
         graph.add((prop, RDFS.range, range_))
         graph.add((prop, RDFS.label, Literal(label)))
 
+    # SPARQL query reference
     data_properties = {
         EX.name: (EX.Patient, XSD.string, "name"),
         EX.gender: (EX.Patient, XSD.string, "gender"),
@@ -213,7 +215,8 @@ def process_bundle(graph, bundle, reference_map=None):
         resource_id = resource.get("id")
         if not resource_type or not resource_id:
             continue
-
+        
+        # SPARQL query reference
         try:
             if resource_type == "Patient":
                 patient = patient_uri(resource_id)
