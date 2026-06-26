@@ -412,6 +412,7 @@ def apply_simple_inference(graph):
             graph.add((patient, RDF.type, EX.RiskPatient))
 
 
+# Conversion and formatting functions for SPARQL query results
 def format_result(value):
     if value is None:
         return ""
@@ -422,6 +423,7 @@ def rows_from_query(graph, query, fields):
     return [[format_result(getattr(row, field)) for field in fields] for row in run_query(graph, query)]
 
 
+# Queries
 def query_conditions(graph, limit=300):
     query = f"""
     SELECT ?patientName ?conditionLabel WHERE {{
