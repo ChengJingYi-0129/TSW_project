@@ -39,6 +39,12 @@ For the GUI demo:
 python gui_app.py
 ```
 
+For a step-by-step tester walkthrough, see:
+
+```powershell
+TESTER_DEMO_GUIDE.md
+```
+
 Expected outputs:
 - `..\output\personal_health_kg.ttl` - RDF/RDFS/OWL Turtle knowledge graph
 - `..\output\query_results.txt` - SPARQL query result tables
