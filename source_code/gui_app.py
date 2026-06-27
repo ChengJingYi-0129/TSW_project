@@ -1,13 +1,3 @@
-"""
-Simple GUI demo for the HL7 FHIR personal health knowledge graph project.
-
-Run:
-    python gui_app.py
-
-This GUI keeps the same lab-level project logic, but presents the output in a
-cleaner way for demonstration.
-"""
-
 from pathlib import Path
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -173,6 +163,7 @@ class HealthKGApp:
         except Exception as error:
             messagebox.showerror("Error", str(error))
 
+    # For SPARQL query execution and displaying results
     def set_table(self, headers, rows):
         self.tree.delete(*self.tree.get_children())
         self.tree["columns"] = headers

@@ -507,6 +507,7 @@ def query_medications(graph, limit=300):
     return rows_from_query(graph, query, ["patientName", "medication", "status"])
 
 
+# GUI - Query
 def ask_question(graph, question):
     question = question.lower()
     if "condition" in question or "disease" in question:
