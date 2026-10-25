@@ -1,58 +1,48 @@
-# HL7 FHIR Personal Health Knowledge Graph Demo
+# HL7 FHIR Personal Health Knowledge Graph
 
-Project title:
-Development of a HL7 FHIR-Based Personal Health Knowledge Graph and Intelligent SPARQL Query System Using OWL Ontologies
+A semantic-web prototype that transforms synthetic HL7 FHIR R4 health records into an RDF/OWL knowledge graph, supports SPARQL queries, and applies rule-based inference to identify higher-risk patients.
 
-Selected Semantic Web topics:
-- Category 2: RDF, RDFS, and SPARQL
-- Category 3: OWL ontology and inference
+> The project uses Synthea synthetic data only. No real patient records are included.
 
-## Dataset
+## Highlights
 
-The demo uses Synthea FHIR R4 synthetic EHR records stored in:
+- Maps FHIR resources into RDF triples
+- Models health concepts with RDF, RDFS, and OWL
+- Runs SPARQL queries over an RDFLib graph
+- Applies rule-based inference to classify `RiskPatient` individuals
+- Includes a GUI demonstration workflow
 
-```powershell
-data\fhir
-```
+## Technology
 
-Synthetic data is used because real EHR records contain sensitive patient information.
+- Python
+- RDFLib
+- HL7 FHIR R4
+- RDF / RDFS / OWL
+- SPARQL
+- Synthea synthetic EHR data
 
-## Setup
+## Run Locally
 
-Install dependencies:
-
-```powershell
+```bash
 pip install -r requirements.txt
-```
-
-## How to Run
-
-From this folder:
-
-```powershell
 python fhir_kg_system.py
 ```
 
-For the GUI demo:
+To launch the GUI demo:
 
-```powershell
+```bash
 python gui_app.py
 ```
 
-For a step-by-step tester walkthrough, see:
+## Outputs
 
-```powershell
-TESTER_DEMO_GUIDE.md
-```
+- `output/personal_health_kg.ttl` — generated knowledge graph
+- `output/query_results.txt` — SPARQL query results
 
-Expected outputs:
-- `..\output\personal_health_kg.ttl` - RDF/RDFS/OWL Turtle knowledge graph
-- `..\output\query_results.txt` - SPARQL query result tables
+## FHIR Coverage
 
-The program demonstrates:
-- Loading Synthea FHIR JSON patient bundles.
-- Mapping Patient, Condition, Observation, MedicationRequest, CarePlan, Immunization, and Encounter resources into RDF triples.
-- Defining OWL classes, object properties, and datatype properties.
-- Defining RDFS subclass, domain, range, and label statements.
-- Running real SPARQL queries over the RDFLib graph.
-- Applying rule-based inference to classify RiskPatient individuals.
+The graph maps Patient, Condition, Observation, MedicationRequest, CarePlan, Immunization, and Encounter resources.
+
+## Project Context
+
+An academic Semantic Web project demonstrating how interoperable health-data standards and ontology-based reasoning can support structured analysis without exposing real patient information.
